@@ -1,0 +1,175 @@
+{
+  "noResult": "No Result", 
+  "tenIPLTeams": "10 IPL Teams",
+  "pointsTable": "Points Table",
+  "predictTheWinnerMsg": "Predict the winner of the games below",
+  "predictionsRemain": "Predictions Remain",
+  "upcomingMatches": "Upcoming Matches",
+  "pastMatches": "Past Matches",
+
+  "submit": "submit",
+  "playNow": "play now",
+  "cancel": "cancel",
+  "worldCupPredictor": "IPL predictor",
+  "playToWin": "Play to Win",
+  "jackpotMoney": "₹82,000,000",
+  "days": "Days",
+  "hours": "hours",
+  "minutes": "minutes",
+  "seconds": "seconds",
+  "submissionsClose": "submissions close",
+  "howToPlay": "how to play",
+  "leaderboards": "leaderBoards",
+  "results": "results",
+  "prizes": "prizes",
+  "selectGroupToView": "select group to view the table",
+  "theGameWillshowHere": "The Game will show here when they become available",
+  "theResultsWillshowHere": "The Results will show here when they become available",
+  "matcheswilllock10minutesbeforekickoff": "Matches will LOCK 10 minutes before Kick Off - Group",
+  "edit": "edit",
+  "match": "match",
+  "group": "Group",
+  "finalScore": "Final Score",
+  "correct": "correct",
+  "incorrect": "incorrect",
+  "gamesPlayed": "Games Played",
+  "correctResults": "Correct Results",
+  "correctScores": "Correct Scores",
+  "pointsFromCR": "Points from Correct Result",
+  "pointsFromCS": "Points from Correct Score",
+  "worldCupLeaderBoards": "World Cup leaderBoards",
+  "position": "Position",
+  "name": "name",
+  "showResults": "Show Results",
+  "latestResults": "Latest Results",
+  "totalPoints": "total Points",
+  "resultsByGrp": "Results by Group",
+  "theScoreboard": "The Scoreboard",
+  "showMore": "Show More",
+  "success": "success",
+  "error": "error",
+  "bronze": "bronze",
+  "gold": "gold",
+  "silver": "silver",
+  "pointsEarned": "points Earned",
+  "fromCR": "from Correct Result",
+  "fromCS": "from Correct Score",
+  "myLeaguePosition": "My League Position",
+  "myPoints": "My Points",
+  "predictionsMade": "Predictions Made",
+  "thankYou": "Thank You",
+  "ok": "ok",
+  "change": "change",
+  "confirm": "confirm",
+  "amount": "amount",
+  "showTableForMyPos": "show table for my position",
+  "showTop10": "Show Top 10",
+  "successfulPred": "Successful Prediction",
+  "YoureIntheGame": "You're in the game",
+  "NowYouMade": "Now you've made your predictions, place a bet in our sports book to be in the running for the prize table.",
+  "placeABet": "Place A Bet",
+  "pointsAsFollowsTitle": "points are rewarded as follows",
+  "pointsAsFollowsContent": "The leaderboard will be updated after each game.",
+  "prizesContent": "Correctly predict the outcome of all 70 matches and a whopping ₹82,000,000 will be won by one lucky winner!<br>If you don’t win the jackpot, don’t worry, we have another  ₹420,000 to give away to 50 lucky players. As the competition advances, points will be awarded to everyone who has made a prediction with a leaderboard available to see where you rank. At the end of the contest cash prizes will be awarded based on leaderboard position.",
+  "howToPlayResults": "<p>Don’t miss your chance to win in our exclusive, free to enter Predictor Contest. Simply predict the final outcome of each game to be in with the chance to win a massive ₹82,000,000.<br><br>As well as being in the running for the main prize, you will also be entered into a second leaderboard competition with all players fighting to win their share of ₹420,000 with 50 prizes up for grabs.<br><br>It couldn’t be easier to get started. Just click <a href='javascript:void(0);' id='clickP' style='color: var(--accent-pink);'> Play Now </a> to enter your a Match winner by clicking the team and locking in your selection. <br><br>You can enter the results for all 70 matches as early as you like and selections will be still available to enter up into week 7 of the IPL Tournament. <br><br>Don’t worry if you change your mind on any picks, your predictions can be changed at any time, as often as you like, provided the match has not yet started. All matches will be disabled for any match prediction 60 minutes before kickoff.</p>",
+  "faq": [
+    {
+      "Q": "COMPETITION RULES",
+      "A": [
+        "All players will be deemed to have accepted the rules of the game.",
+        "To win the ₹82,000,000 you have to predict the correct 70 match results, that being the winner of each match",
+        "To win the₹82,000,000  jackpot, all 70 games must be played.",
+        "In relation to the ₹82,000,000  leaderboard competition, players with the most points at the end of the competition will win the league. If two or more players are tied on points, prizes will be awarded and split between them.",
+        "I.E:<br>If more than one player is tied for the same position on the Leaderboard, the combined prizes for the affected positions will be divided by the number of players tied. ie, if three players are tied for first place, the prizes for 1st, 2nd and 3rd position will be combined and then divided by the three tied players",
+        "In the event of any fixture being changed by BCCI authorities for whatever reason, or any other issue resulting in changes to the schedule of games in IPL 2023, every effort will be made to update the predictor chart accordingly. However, in the unlikely event of any issue relating to results of games, the final scores and points awarded, allow and/or disqualify players due to suspicion of fraud, the administrators' decision will be final and no correspondence will be entered into."
+      ]
+    },
+    {
+      "Q": "GENERAL TERMS and CONDITIONS",
+      "A": [
+        "All new and existing Happistar players are eligible to join.",
+        "The Contest will be open from 17th March 2023 to 21st May 2023",
+        "Players  must have placed cumulative real money bets to at least the value of ₹900 on the IPL 2023 to be eligible for any winnings. Deposit can’t have a bonus.",
+        "A minimum cumulative deposit amount of ₹900 must be made during the duration of the IPL 2023 contest to be eligible for winnings",
+        "All prizes must be claimed by emailing <a href='mailto:IPL2023@happistar.com'>IPL2023@happistar.com</a>  within three days of the end of the contest",
+        "Leaderboard winnings will be paid within 48 hours of claim being received and validated",
+        "The  ₹82,000,000 jackpot will be subject to account audits and payment schedule will be agreed at the time of issue",
+        "Happistar reserves the right at any time to modify or discontinue, temporarily or permanently, this Contest with or without prior notice due to reasons outside its control (including, without limitation, in the case of anticipated, suspected or actual fraud).",
+        "The ₹82,000,000 prize winner must agree to partake in media events as part of the announcement, however real name and location can be withheld at request",
+        "General site rules apply"
+      ]
+    }
+  ],
+
+  "prizesTable": [
+    {
+      "pos": "1st Place",
+      "amount": "₹87,000"
+    },
+    {
+      "pos": "2nd Place",
+      "amount": "₹70,000"
+    },
+    {
+      "pos": "3rd Place",
+      "amount": "₹60,000"
+    },
+    {
+      "pos": "4th Place",
+      "amount": "₹50,000"
+    },
+    {
+      "pos": "5th Place",
+      "amount": "₹40,000"
+    },
+    {
+      "pos": "6th Place",
+      "amount": "₹25,000"
+    },
+    {
+      "pos": "7th Place",
+      "amount": "₹16,000"
+    },
+    {
+      "pos": "8th Place",
+      "amount": "₹13,000"
+    },
+    {
+      "pos": "9th Place",
+      "amount": "₹10,000"
+    },
+    {
+      "pos": "10th Place",
+      "amount": "₹8,000"
+    },
+    {
+      "pos": "11th Place to 15th place",
+      "amount": "₹3,400"
+    },
+    {
+      "pos": "16th Place to 25th place",
+      "amount": "₹1,000"
+    },
+    {
+      "pos": "26th Place to 35th Place",
+      "amount": "₹800"
+    },
+    {
+      "pos": "36th Place to 50th place",
+      "amount": "₹400"
+    }
+  ],
+
+  "theLeaderboardsWillShow": "The LeaderBoards will show here when they become available",
+  "youAreAlmostDone": "YOU'RE ALMOST DONE",
+  "youAreAlmostDone_content": "Predict the remainder of the group matches to be in the running for the Top Prize!",
+  "backToPredictionsPage": "Back to Predictions Page",
+  "allMatchComplete": "All 70 match predictions are now complete, place a bet in our Sportsbook to be able to claim a prize from the leaderboard.",
+  "betNow": "Bet Now",
+  "theMatchEndedWithoutPrediction" :  "The Match has ended without your prediction",
+  "point": "point",
+  "points": "points",
+  "correctResult": "CORRECT RESULT",
+  "correctScore": "CORRECT SCORE",
+  "matchHasStartedWaiting": "Match started, waiting for result"
+}

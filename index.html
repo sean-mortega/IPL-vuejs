@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happistar IPL Predictor</title>
+    <link rel="icon" href="assets/_favicon.ico">
+    <link rel="stylesheet" href="css/styles.css?v=63">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="app" v-cloak>
+
+
+        <!--Main banner on top-->
+
+        <section class="banner-wrap">
+            <img v-bind:src="howToPlayData.Banner1 || './assets/banner-top.png'" alt="" class="featured-img desktop" >
+            <img v-bind:src="howToPlayData.Banner2 || './assets/banner-top.png'" alt="" class="featured-img mobile" >
+            <div class="event-info-section">
+                <img src="./assets/main-logo.png" height="80px" alt="" class="ipl-logo slide-in-bck-center" style="margin: 0px auto 20px; max-width: 100%;">
+                <h3 class="small-txt txt-bold blue-txt uppercase text-center ptw slide-in-bck-center">{{ languages?.playToWin }}</h3>
+                <h2 class="txt-bold uppercase text-center jackpot-txt anim">{{ languages?.jackpotMoney }}</h2>
+               
+
+                <div class="tickers-container">
+                    <div class="inner">
+                       <div class="clock-base">
+                        <div class="txt-inside-img">
+                            <img src="assets/clock-base.svg"  alt="clock" srcset="">
+                            <div class="centered">
+                                <h1>{{ tensOnes('tens', cd_days) }}</h1>
+                            </div>
+                        </div>
+                        <div class="txt-inside-img">
+                            <img src="assets/clock-base.svg"  alt="clock" srcset="">
+                            <div class="centered">
+                                <h1>{{ tensOnes('ones', cd_days) }}</h1>
+                            </div>
+                        </div>
+                       </div>
+                        <div class="clock-label">{{ languages?.days }}</div>
+                    </div>  
+                    <div class="inner">
+                        
+
+                        <div class="clock-base">
+                            <div class="txt-inside-img">
+                                <img src="assets/clock-base.svg"  alt="clock" srcset="">
+                                <div class="centered">
+                                    <h1 id="hours">{{ tensOnes('tens', cd_hours) }}</h1>
+                                </div>
+                            </div>
+                            <div class="txt-inside-img">
+                                <img src="assets/clock-base.svg"  alt="clock" srcset="">
+                                <div class="centered">
+                                    <h1>{{ tensOnes('ones', cd_hours) }}</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clock-label">{{ languages?.hours }}</div>
+
+                    </div>  
+                    <div class="inner">
+                        
+                        <div class="clock-base">
+                            <div class="txt-inside-img">
+                                <img src="assets/clock-base.svg"  alt="clock" srcset="">
+                                <div class="centered">
+                                    <h1 id="minutes">{{ tensOnes('tens', cd_minutes) }}</h1>
+                                </div>
+                            </div>
+                            <div class="txt-inside-img">
+                                <img src="assets/clock-base.svg"  alt="clock" srcset="">
+                                <div class="centered">
+                                    <h1>{{ tensOnes('ones', cd_minutes) }}</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clock-label">{{ languages?.minutes }}</div>
+
+
+                    </div> 
+                </div>
+
+                
+                <div class="countdown mobile fade-in one">
+                    <div class="cd-items">
+                        <span id="days">
+                            {{ cd_days }}
+                        </span>
+                        <span>
+                            {{ languages?.days }}
+                        </span>
+                    </div>
+                    <div class="cd-items">
+                        <span id="hours">
+                            {{ cd_hours }}
+                        </span>
+                        <span>
+                            {{ languages?.hours }}
+                        </span>
+                    </div>
+                    <div class="cd-items">
+                        <span id="minutes">
+                            {{ cd_minutes }}
+                        </span>
+                        <span>
+                            {{ languages?.minutes }}
+                        </span>
+                    </div>
+                    <div class="cd-items">
+                        <span id="seconds">
+                            {{ cd_seconds }}
+                        </span>
+                        <span>
+                            {{ languages?.seconds }}
+                        </span>
+                    </div>
+                </div>
+
+                <a href="javascript:void(0);" v-on:click="switchPage(2);" class="btn cta-button uppercase text-center txt-bold mobile-cta">
+                    {{ languages?.playNow }} <i class="fa fa-chevron-right"></i> 
+                </a>
+
+
+            </div>
+        </section>
+
+        <nav class="menu">
+
+            <ul>
+                <li id="howToPlayM" ><a class="uppercase small-txt" href="javascript:void(0);" v-on:click="switchPage(1);">{{ languages?.howToPlay }}</a></li>
+                <li id="playNowM" ><a class="uppercase small-txt" href="javascript:void(0);" v-on:click="switchPage(2);">{{ languages?.playNow }}</a></li>
+                <!-- add conditions here-->
+                <li  
+                id="leagueTableM" ><a class="uppercase small-txt" href="javascript:void(0);" v-on:click="switchPage(3);">{{ languages?.leaderboards }}</a></li>
+                <li  
+                id="resultsM" ><a class="uppercase small-txt" href="javascript:void(0);" v-on:click="switchPage(4);">{{ languages?.pointsTable }}</a></li>
+                <li id="prizesM" ><a class="uppercase small-txt" href="javascript:void(0);" v-on:click="switchPage(5);">{{ languages?.prizes }}</a></li>
+            </ul>
+
+        </nav>
+
+
+
+
+        <!--HOW TO PLAY PAGE -->
+        <section id="howToPlay" class="fade-in three" v-if="showHowtoPlay">
+
+
+            <div class="spacer white-bg">
+
+
+                <div class="container">
+                    <h1 class="uppercase small-txt text-center black-txt font-strong">
+                        {{ languages?.howToPlay }}
+                    </h1>
+    
+                    <div class="tutorials_wrap">
+                        <div class="tutorials__col_1">
+
+
+                            <div v-html="languages?.howToPlayResults" v-cloak> </div>
+
+
+                        </div>
+                        <div class="tutorials__col_2">
+                            <img src="./assets/cricket-helmet.png" width="100%" alt="wcup trophy" srcset="">
+                        </div>
+                    </div>
+    
+                </div>
+
+
+                <!--FAQ HERE -->
+                
+                <div class="faq-wrap">
+
+                    <div class="collapse-accordion">
+                        <ul>
+                            <li v-for="(items, index) of languages.faq">
+                                <input type="checkbox" :id="'list-item-' + (index+1)" name="accrodion">
+                                <label :for="'list-item-' + (index+1)"  class="first">
+                                    <div class="inside-container">
+                                        <span class="expandText font-strong">{{ items?.Q }}</span>
+                                        <span class="collpaseText font-strong">{{ items?.Q }}</span>
+                                    </div>
+                                </label>
+                                <ul>
+                                    <li v-for="(item, index) of items?.A" >
+                                        <div class="inside-container">
+                                            <p v-html="( index + 1) + '. ' + item " v-cloak> 
+                                        </div>
+                                        
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="container" style="margin-top: 40px !important; margin-bottom: 30px !important;">
+                    <div class="submit-wrap">
+                        <button  class="btn cta-button uppercase small-txt"
+                            style="border: 0px solid var(--accent-blue-light)"
+                            href="javascript:void(0);" v-on:click="switchPage(2);"
+                            >{{ languages.playNow }} <i class="fa fa-chevron-right"></i> 
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="white-bg">
+                        <div class="container-sm">
+                            <h1 class="uppercase">{{ languages?.tenIPLTeams }}</h1>
+                        </div>
+                    </div>
+                    <div class="teams-logo">
+                        <img src="./assets/teams/Super-Kings.svg" height="60px">
+                        <img src="./assets/teams/Delhi-Capitals.svg" height="60px">
+                        <img src="./assets/teams/Gujarat-Titans.svg" height="60px">
+                        <img src="./assets/teams/Knight-Riders.svg" height="60px">
+                        <img src="./assets/teams/Lucknow-Super-Giants.svg" height="60px">
+                        <img src="./assets/teams/Mumbai-Indians.svg" height="60px">
+                        <img src="./assets/teams/Punjab-Kings.svg" height="60px">
+                        <img src="./assets/teams/Rajastan-Royals.svg" height="60px">
+                        <img src="./assets/teams/Bangalore-Royal-Challengers.svg" height="60px">
+                        <img src="./assets/teams/Sunrisers.svg" height="60px">
+                    </div>
+                    <div class="blue-bg-dark">
+                        <div class="container-sm">
+                            <img src="./assets/one-winner.png" height="70px" alt="one-winner" style="display: block;margin: 0 auto; ">
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+        </section>
+
+
+        <!--Prizes Section-->
+        <section id="prizes fade-in one-half" v-if="showPrizes">
+
+            
+            <div class="spacer" style="background: #fff;">
+
+
+                <div class="container" style="padding: 0 25px !important;">
+                    
+                    <h1 class="uppercase small-txt text-center black-txt font-strong mb-2">{{ languages?.prizes }}</h1>
+                    <p v-html="languages?.prizesContent"></p>
+
+                </div>
+
+                
+            </div>
+
+            <div class="spacer" style="background: #fff;">
+                <div class="container" style="padding: 0 25px !important;">
+                    <!-- <h1 class="uppercase small-txt text-center black-txt font-strong mb-2" >{{ languages?.pointsAsFollowsTitle }}</h1> -->
+                    <p class="text-center" v-html="languages?.pointsAsFollowsContent"></p>
+            </div></div>
+
+
+            <div class="spacer" style="background: var(--text-tertiary);">
+                
+                <div class="container">
+    
+                    <table class="league-table prize" cellspacing="0px" cellpadding="20px">
+    
+                        <thead>
+                            <th class="uppercase text-center font-strong">{{ languages?.position }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.prizes }}</th>
+                        </thead>
+
+                        <tbody>
+
+                            <tr v-for="(items , index) of languages?.prizesTable ">
+
+                                <td>{{ items?.pos  }}</td>
+                                <td>{{ items?.amount  }}</td>
+                            
+                            </tr>
+
+                        </tbody>
+    
+                    </table>
+    
+                </div>
+
+
+            
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- PLAY NOW Page -->
+        <section id="playNow" class="fade-in one-half" v-if="showPlayNow">
+
+            <!--put upcoming and done matches here-->
+           
+           <!-- match schedules section -->
+           <div class="spacer gray-bg" v-if="playNow__scheduleData.length > 0" id="">
+
+                <!-- Your'e in the Game Section-->
+                <div class="container placeABet fade-in one" style="padding-top: 60px;" v-if="showNextGame===true" >
+                    <div style="padding: 20px 10px;">
+                        <h1 class="uppercase xl-txt text-center mb-2">{{ languages?.YoureIntheGame }}</h1>
+                        <p class="text-center mb-2">
+                            {{ languages?.allMatchComplete }}
+                        </p>
+                        <a class="btn cta-button text-center uppercase" href="javascript:void(0)" style="margin: 5vh auto 2vh; display: flex; place-content: center;"
+                        v-on:click="placeABet"
+                        >{{ languages?.placeABet }}</a>
+                    </div>
+                </div>
+
+                <div class="container" style="margin-top: 0px !important;" v-else>
+
+                    <h1 class="uppercase small-txt text-center black-txt font-strong mt-2">
+                        {{ languages?.predictTheWinnerMsg }}
+                    </h1>
+
+                    <div class="filter" v-if="true">
+                        <ul>
+                            <li class="font-strong prev" @click="filterMatches('done')">{{ languages?.pastMatches }}</li>
+                            <li class="font-strong next" @click="filterMatches('upcoming')">{{ languages?.upcomingMatches }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="matches-container fade-in one" v-if="isScheduleDataLoaded===true">
+                    
+                        <!--This is the match window-->
+
+                        <div  v-for="(items, index) of playNow__scheduleData"
+                                class="match-item fade-in one-half" :class="{ 'upcoming': items.Status === null || items.Status === -2, 'done': items.Status !== null && items.Status !== -2 }">
+
+
+                            <!-- the correct and incorrect score overlays-->
+                            <div class="fs_wrap" v-if="items.Status!==null && items.Status!==-1 && items.Status!==-2 && items.Status!==-3">
+                                <p class="res" v-if="items.Status===0">{{ languages.incorrect }}</p>
+                                <p class="res" v-else>{{ languages.correct }}</p>
+                                <p class="res" style="color: var(--accent-pink);">
+                                    +{{ items?.Status!==0 ? '2' : '0' }} {{ languages.points }} 
+                                </p>
+                            </div>
+
+                            <div class="ds_wrap" v-if="items.Status!==null && items.Status===-1">
+                                <p class="sc">
+                                    {{ languages?.theMatchEndedWithoutPrediction || 'The Match has ended without your prediction' }}
+                                </p>
+                            </div>
+
+                            <div class="ms_wrap bg-pan-left" v-if="items.Status!==null && items.Status===-2">
+                                <p class="sc">
+                                    {{ languages?.matchHasStartedWaiting || 'Match started, waiting for result' }}
+                                </p>
+                            </div>
+
+                            <div class="ds_wrap bg-pan-left" v-if="items.Status!==null && items.Status===-3">
+                                <p class="sc">
+                                    {{ languages?.noResult || 'No Result' }}
+                                </p>
+                            </div>
+
+
+                            
+                            <div class="match-item__header">
+                                <span class="uppercase">{{ languages?.match }} {{ items.MatchId }} </span>
+                                <span>{{ convertTZ(items.MatchTime) }} </span>
+                                
+                            </div>
+
+
+                            <div class="match-item__selection" :id="'matchParent_' + index">
+
+                                <button class="triggerClick" style="display: none;" @click="lockMatch(('matchParent_' + index), items.TeamAPrediction, items.TeamBPrediction )"></button>
+
+                                
+                                <i class="fa fa-lock lock-icon" @mouseover="changeToUnlockIcon( ('matchParent_' + index) )" @mouseleave="changeToLockIcon( ('matchParent_' + index) )" @click="unlockMatch( ('matchParent_' + index) )"></i>
+
+                                
+
+                                <div class="country" @click="submitPrediction( index, ('match_left_' + index), 'left')">
+                                    <img v-bind:src="items.TeamAImageUrl" width="70%" alt="" srcset="" style="cursor: pointer;">
+                                    <span class="font-strong uppercase text-center">{{ items.TeamAName }}</span>
+                                </div>
+
+
+                                    <!--new team scoring VIA TOGGLE-->
+
+                                    <div class="score">
+
+                                        <div class="toggle" :id="'match_toggle_' + index">
+                                            <button type="button" :id="'match_left_' + index" :name="'match_' + index" class="child"
+                                            :class="{ active: items.TeamAPrediction === '1' && items.TeamBPrediction === '0' }"
+                                            @click="submitPrediction( index, ('match_left_' + index), 'left')"
+                                            >WIN</button>
+                                            <span>VS</span>
+                                            <button type="button" :id="'match_right_' + index" :name="'match_' + index" class="child"
+                                            @click="submitPrediction( index, ('match_right_' + index), 'right')"
+                                            :class="{ active: items.TeamBPrediction === '1' && items.TeamAPrediction === '0' }"
+                                            >LOSE</button>
+                                        </div>
+
+
+                                    </div>
+
+                                    <!--end-->
+
+                                <div class="country" @click="submitPrediction( index, ('match_right_' + index), 'right')">
+                                    <img v-bind:src=" items.TeamBImageUrl" alt="" srcset="" style="cursor: pointer;">
+                                    <span class="font-strong uppercase text-center">{{ items.TeamBName }}</span>
+                                </div>
+
+                            </div>
+
+
+                            <!--end-->
+
+                        </div>
+
+        
+                    </div>
+
+                    <div v-else>
+                        <div class="container text-center" >
+                            <div class="spinner">
+                                <div class='ring blue'></div>
+                                <div id="content">
+                                  <span>Loading...</span>
+                                </div>
+                              </div>
+                        </div> 
+                    </div>
+
+                </div>
+                
+
+           </div>
+
+           <div class="spacer white-bg" style="margin-bottom: 5vh;" v-else>
+                <div class="container blue-bg text-center nodata" >
+                    {{ languages?.theGameWillshowHere }}
+                </div> 
+
+           </div>
+
+            
+
+        </section>
+
+
+
+
+
+        <!--League Table PAGE -->
+        <section id="leagueTable" class="fade-in one-half" v-if="showLeaderboards">
+
+
+
+
+            <div class="spacer white-bg" style="margin-bottom: 15vh;">
+
+
+                <div class="container">
+                    <h1 class="uppercase small-txt text-center black-txt font-strong" v-if="false">
+                        {{ languages?.myLeaguePosition }}: {{ league__userScores?.POS || 0 }}
+                    </h1>
+    
+                    <h1 class="uppercase small-txt text-center black-txt font-strong mb-2">
+                        {{ languages?.myPoints }}: {{ league__userScores?.TotalPoints || 0 }}
+                    </h1>
+    
+    
+                    <div class="charts-wrap">
+                        
+                        <div class="chart-container" style="width: calc( 100% / 6); height: 150px;">
+                            <canvas id="graph"></canvas>
+                            <h6 class="text-center uppercase black-txt mt-1 font-strong">{{ languages?.predictionsMade }}</h6>
+                        </div>
+        
+                        <div class="chart-container" style="width: calc( 100% / 6); height: 150px;">
+                            <canvas id="graph2"></canvas>
+                            <h6 class="text-center uppercase black-txt mt-1 font-strong">{{ languages?.upcomingMatches }}</h6>
+                        </div>
+        
+                        <div class="chart-container" style="width: calc( 100% / 6); height: 150px;">
+                            <canvas id="graph3"></canvas>
+                            <h6 class="text-center uppercase black-txt mt-1 font-strong">{{ languages?.correctResults }}</h6>
+                        </div>
+        
+                        <div class="chart-container" style="width: calc( 100% / 6); height: 150px;">
+                            <canvas id="graph4"></canvas>
+                            <h6 class="text-center uppercase black-txt mt-1 font-strong">{{ languages?.totalPoints }}</h6>
+                        </div>
+    
+    
+                    </div>
+                    
+                </div>
+
+                
+
+
+            </div>
+
+
+            <!-- remove this when the Leaderboards are ready-->
+            <!-- <div class="spacer gray-bg" style="margin-bottom: 0vh; padding-bottom: 40px;" v-if="true">
+                <div class="container">
+
+                    <h1 class="uppercase small-txt text-center black-txt font-strong" style="margin-bottom: 3vh;">
+                        {{ languages?.leaderboards }}
+                    </h1>
+
+                    <table id="lt" class="league-table" cellspacing="0px" cellpadding="20px"
+                    v-if="topScores === true">
+
+                        <thead>
+                            <th class="uppercase text-center font-strong">{{ languages?.position }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.name }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.predictionsMade }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.correctResults }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.totalPoints }}</th>
+                        </thead>
+                    </table>
+
+
+                    <div class="container blue-bg text-center nodata">
+                        {{ languages?.theLeaderboardsWillShow }}
+                    </div>
+                </div>
+            </div> -->
+            <!--end-->
+
+            <div class="spacer gray-bg" style="margin-bottom: 0vh;">
+
+
+                <div class="container">
+
+                    <h1 class="uppercase small-txt text-center black-txt font-strong" style="margin-bottom: 3vh;">
+                        {{ languages?.leaderboards }}
+                    </h1>
+    
+                    
+                    <table id="lt" class="league-table" cellspacing="0px" cellpadding="20px"
+                    v-if="topScores === true">
+
+                        <thead>
+                            <th class="uppercase text-center font-strong">{{ languages?.position }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.name }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.predictionsMade || 'ssssss' }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.correctResults }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.totalPoints }}</th>
+                        </thead>
+
+
+                        
+                        <tbody>
+
+                            <tr v-for="(items , index) of league__list_top">
+
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.POS  }} </td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.Name  }}</td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.GamesPlayed  }}</td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.CorrectResult  }} </td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.TotalPoints  }}</td>
+                                
+                            </tr>  
+                            
+                            <tr class="myPos" v-if="league__userScores?.POS>10">
+                                <td>{{ league__userScores?.POS  }} </td>
+                                <td>{{ league__userScores?.Name  }}</td>
+                                <td>{{ league__userScores?.GamesPlayed  }}</td>
+                                <td>{{ league__userScores?.CorrectResult  }} </td>
+                                <td>{{ league__userScores?.TotalPoints  }}</td>
+                            </tr>
+                            
+                            <tr class="myPos expand">
+                                <td colspan="4"><button class="btn cta-button uppercase"
+                                    style="border: 0px solid var(--accent-blue); color: #fff !important; width: 50vh;"
+                                    v-on:click="getPointsByUser( 'self');
+                                    topScores=false;
+                                    selfScores=true">{{ languages.showTableForMyPos }}</button></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+                    <table id="lt" class="league-table" cellspacing="0px" cellpadding="20px"
+                    v-if="selfScores===true">
+
+                    <!-- v-if="selfScores===true"> -->
+    
+                        <thead>
+                            <th class="uppercase text-center font-strong">{{ languages?.position }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.name }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.predictionsMade || 'sssss' }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.correctResults }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.totalPoints }}</th>
+                        </thead>
+
+                        <tbody>
+
+                            <!-- <tr v-for="(items , index) of league__list_self"
+                            @click="items?.POS === myPosition ? opentr(event) : false "
+                            > -->
+
+                            <tr v-for="(items , index) of league__list_self">
+
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.POS  }} </td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.Name  }}</td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.GamesPlayed  }} </td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.CorrectResult  }} </td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.TotalPoints  }}</td>
+
+                            </tr> 
+
+                             <!--expand for your position-->
+                             <tr class="myPos expand">
+
+                                <td colspan="7"><button class="btn cta-button uppercase"
+                                    style="border: 0px solid var(--accent-blue); color: #fff !important; width: 50vh;"
+                                    v-on:click="getPointsByUser( 'top');
+                                    topScores=true;
+                                    selfScores=false">{{ languages.showTop10 }}</button>
+                                </td>
+                                
+                            </tr>
+
+                            
+
+                        </tbody>
+    
+    
+                    </table>
+
+
+
+
+
+                    <!-- <div class="submit-wrap">
+                        <button  class="btn cta-button uppercase small-txt"
+                        style="border: 0px solid var(--accent-blue-light); color: #fff !important; margin-top: 3vh;"
+                        href="javascript:void(0);" v-on:click="switchPage(4);"
+                        >{{ languages?.showResults }}</button>
+                    </div> -->
+    
+                </div>
+
+                <!-- <div v-else class="container blue-bg text-center nodata">
+
+                    <h1 class="uppercase small-txt text-center black-txt font-strong" style="margin-bottom: 3vh;">
+                        {{ languages?.worldCupLeaderBoards }}
+                    </h1>
+
+                    {{ languages?.theResultsWillshowHere }}
+                </div> -->
+
+
+            </div>
+
+
+
+           
+            
+        </section>
+
+
+
+
+
+        <!--Results PAGE -->
+        <section id="results" class="fade-in one-half" v-if="showResultsPage">
+
+            <div class="spacer white-bg">
+  
+                            <div class="container">
+
+                                <!--filter by group-->
+                                <!-- <ul class="group-nav__wrap">
+
+                                    
+                                    <li 
+                                        v-for="(item, index) in playNow__group_teamsData"
+                                        class="group-nav__btn small-txt"
+                                        v-on:click="selectGroup( index );" :id="'g_' + index">
+                                        
+                                            <a  href="javascript:void(0);" >{{ index }}</a>
+                                            
+                                    </li>
+
+
+                                </ul> -->
+                                
+
+                                <!--countries with points-->
+                                <table class="group-table" cellspacing="0px" cellpadding="20px" id="scores-tbl" v-if="true">
+
+                                    <thead>
+
+                                        <th>POS</th>
+                                        <th>TEAM</th>
+                                        <th>MP</th>
+                                        <th>W</th>
+                                        <th>D</th>
+                                        <th>L</th>
+                                        <th class="uppercase">{{ languages?.totalPoints }}</th>
+                                        
+                                    </thead>
+
+
+                                    <tbody>
+
+                                        <tr v-for="(item, index) of playNow__group_competitors"
+                                        class="fade-in one-half">
+
+                                            <td class="text-center">{{ index + 1}} </td>
+                                            <td>
+                                                <img v-bind:src=" item.TeamImageUrl || './assets/senegal.png' " width="35px" v-bind:alt=" item.TeamName "> {{ item.TeamName }}
+                                            </td>
+                                            <td class="text-center"> {{ item?.MP }} </td>
+                                            <td class="text-center"> {{ item?.W }} </td>
+                                            <td class="text-center"> {{ item?.D }} </td>
+                                            <td class="text-center"> {{ item?.L }} </td>
+                                            <td class="text-center"> {{ item?.PTS }} </td>
+
+                                        </tr>
+
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+            </div>
+            
+        </section>
+
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+
+            <div class="modal-content" >
+
+                <!-- Success Prediction-->
+                <div class="message-wrap" v-if="successPrediction">
+                    <h1 class="txt-bold blue-txt letter-spacing-2x text-center uppercase mb-1">{{ languages?.successfulPred}}</h1>
+
+                    <h2 class="title black-txt letter-spacing-1x uppercase text-center mb-1">{{ languages?.thankYou}}</h2>
+                </div>
+
+                <!-- Wrong Prediction -->
+                <div class="message-wrap" v-if="errorPrediction">
+                    <h2 class="title black-txt letter-spacing-1x uppercase text-center mb-1">{{ languages?.thankYou}}</h2>
+                    <h1 class="txt-bold blue-txt letter-spacing-2x text-center uppercase mb-1">{{ errorMessage || 'error message here'}} </h1>
+                </div>
+
+                <!--close the modal-->
+                <div v-if="isLoading === false" id="close-modal" class="modal-footer blue-bg-dark"><a class="white-txt text-center mb-1 uppercase" v-on:click="hideModals()">OK</a></div>
+
+
+            </div>            
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/vuelidate.min.js"></script>
+    <script src="./js/validators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment-with-locales.min.js" integrity="sha256-ZykW30UBCXWkPGsVyVPdJlUrce9/PawgYCEzinA4pnU=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.17/moment-timezone-with-data-2012-2022.min.js" integrity="sha256-pQNlWZakdoYCCoBWZ5G8hXPqONH7l7QX+MGFoAkiBqs=" crossorigin="anonymous"></script>
+    <script src="./js/config.js?v=66"></script>
+    <script src="./js/functions.js?v=91"></script>
+
+</body>
+    <!--v10131918-->
+</html>

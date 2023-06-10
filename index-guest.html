@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happistar World Cup Predictor</title>
+    <link rel="icon" href="assets/_favicon.ico">
+    <link rel="stylesheet" href="css/styles.css?v=34">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css"/>
+</head>
+<body>
+
+    <div id="app" v-cloak>
+
+
+        <!--Main banner on top-->
+
+        <section class="banner-wrap">
+            <img v-bind:src="howToPlayData.Banner1 || './assets/banner-top.jpg'" alt="" class="featured-img desktop" >
+            <img v-bind:src="howToPlayData.Banner2 || './assets/top-banner-bg-mb.png'" alt="" class="featured-img mobile" >
+            <div class="event-info-section">
+                <p class="text-center uppercase xl-txt" style="letter-spacing: 7px; font-family: noto-sans-regular !important;">2022 {{ languages?.worldCupPredictor }}</p>
+                <h2 class="big-txt txt-bold uppercase text-center">Win a Share of $600</h2>
+                <!-- hide for internal leaderboards requested by Paul 202211252331
+                <p class="text-center submission-close-txt" style="font-size: 1.3em; font-family: 'noto-sans-regular' !important; margin-bottom: -30px;">{{ languages?.submissionsClose }}</p>
+                <div id="countdown">
+                </div>
+                <a href="javascript:void(0);" v-on:click="redirectToBonus" class="btn cta-button uppercase text-center txt-bold">
+                    {{ languages?.playNow }} <i class="fa fa-chevron-right"></i> 
+                </a>
+                -->
+            </div>
+        </section>
+
+        <nav class="menu">
+
+            <ul>
+                <li id="howToPlayM" ><a class="uppercase small-txt" href="javascript:void(0);" v-on:click="switchPage(1);" v-if="false">{{ languages?.howToPlay }}</a></li>
+                <li id="playNowM" ><a class="uppercase small-txt" href="javascript:void(0);" v-on:click="redirectToBonus()" v-if="false">{{ languages?.playNow }}</a></li>
+                <!-- add conditions here-->
+                <li  
+                id="leagueTableM" ><a class="uppercase small-txt" href="javascript:void(0);" v-on:click="switchPage(3);">{{ languages?.leaderboards }}</a></li>
+                <li  
+                id="resultsM" ><a class="uppercase small-txt" href="javascript:void(0);" v-on:click="redirectToBonus()" v-if="false">{{ languages?.results }}</a></li>
+                <li id="prizesM" ><a class="uppercase small-txt" href="javascript:void(0);" v-on:click="switchPage(5);" v-if="false">{{ languages?.prizes }}</a></li>
+            </ul>
+
+        </nav>
+
+
+
+
+        <!--HOW TO PLAY PAGE -->
+        <section id="howToPlay" class="fade-in one-half" v-if="showHowtoPlay">
+
+
+            <div class="spacer white-bg">
+
+
+                <div class="container">
+                    <h1 class="uppercase small-txt text-center black-txt font-strong">
+                        {{ languages?.howToPlay }}
+                    </h1>
+    
+                    <div class="tutorials_wrap">
+                        <div class="tutorials__col_1">
+
+
+                            <div v-html="languages?.howToPlayResults" v-cloak> </div>
+
+
+                        </div>
+                        <div class="tutorials__col_2">
+                            <img src="./assets/trophy.png" width="100%" alt="wcup trophy" srcset="">
+                        </div>
+                    </div>
+    
+                </div>
+
+                <div class="container" style="margin-top: -50px !important; margin-bottom: 30px !important;">
+                    <div class="submit-wrap">
+                        <button  class="btn cta-button uppercase small-txt"
+                            style="border: 0px solid var(--accent-blue-light)"
+                            href="javascript:void(0);" v-on:click="redirectToBonus()"
+                            >{{ languages.playNow }} <i class="fa fa-chevron-right"></i> 
+                        </button>
+                    </div>
+                </div>
+
+
+
+
+                <!--FAQ HERE -->
+                
+                <div class="faq-wrap">
+
+                            <div class="collapse-accordion">
+                                <ul>
+                                    <li v-for="(items, index) of languages.faq">
+                                        <input type="checkbox" :id="'list-item-' + (index+1)" name="accrodion">
+                                        <label :for="'list-item-' + (index+1)"  class="first">
+                                            <div class="inside-container">
+                                                <span class="expandText font-strong">{{ items?.Q }}</span>
+                                                <span class="collpaseText font-strong">{{ items?.Q }}</span>
+                                            </div>
+                                        </label>
+                                        <ul>
+                                            <li v-for="(item, index) of items?.A" >
+                                                <div class="inside-container">
+                                                    <p v-html="( index + 1) + '. ' + item " v-cloak> 
+                                                </div>
+                                                
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                </div>
+
+                <div class="container">
+                    <div class="submit-wrap">
+                        <img src="./assets/world-cup-logo.png" alt="" height="132px" srcset="" class="wc-logo">
+                    </div>
+                </div>
+                
+            </div>
+
+        </section>
+
+
+        <!--Prizes Section-->
+        <section id="prizes fade-in one-half" v-if="showPrizes">
+
+            
+            <div class="spacer" style="background: #fff;">
+
+
+                <div class="container" style="padding: 0 25px !important;">
+
+                    <h1 class="uppercase small-txt text-center black-txt font-strong mb-2">{{ languages?.prizes }}</h1>
+                    <p v-html="languages?.prizesContent"></p>
+
+                </div>
+
+                
+            </div>
+
+            <div class="spacer" style="background: #fff;">
+                <div class="container" style="padding: 0 25px !important;">
+                    <h1 class="uppercase small-txt text-center black-txt font-strong mb-2" >{{ languages?.pointsAsFollowsTitle }}</h1>
+                    <p v-html="languages?.pointsAsFollowsContent"></p>
+            </div></div>
+
+
+            <div class="spacer" style="background: var(--text-tertiary);">
+                
+                <div class="container">
+    
+                    <table class="league-table prize" cellspacing="0px" cellpadding="20px">
+    
+                        <thead>
+                            <th class="uppercase text-center font-strong">{{ languages?.position }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.prizes }}</th>
+                            
+                        </thead>
+
+                        <tbody>
+
+                            <tr v-for="(items , index) of languages?.prizesTable ">
+
+                                <td>{{ items?.pos  }}</td>
+                                <td>{{ items?.amount  }}</td>
+                            
+                            </tr>
+
+                        </tbody>
+    
+                    </table>
+    
+                </div>
+
+
+            
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- PLAY NOW Page -->
+        <section id="playNow" class="fade-in one-half" v-if="showPlayNow">
+
+
+            <!-- group stage Section-->
+           <div class="spacer white-bg" v-if="playNow__group_competitors.length>0">
+
+
+                <div class="container">
+
+                    <h1 class="uppercase small-txt text-center black-txt font-strong">
+                        {{ languages?.selectGroupToView }}
+                    </h1>
+
+                    <!--filter by group-->
+                    <ul class="group-nav__wrap">
+
+                        
+                        <li 
+                            v-for="(item, index) in playNow__group_teamsData"
+                            class="group-nav__btn small-txt"
+                            v-on:click="selectGroup( index );">
+                            
+                                <a  href="javascript:void(0);" >{{ index }}</a>
+                                
+                        </li>
+
+
+                    </ul>
+                    
+
+                    <!--countries with points-->
+                    <table class="group-table" cellspacing="0px" cellpadding="20px" id="scores-tbl" v-if="false">
+
+                        <thead>
+
+
+                            <th>&nbsp;</th>
+                            <th>PTS</th>
+                            <th>P</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GF</th>
+                            <th>GA</th>
+                            <th>+/-</th>
+
+                            
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr 
+                            v-for="(item, index) of playNow__group_competitors"
+                            class="fade-in one-half"
+                            >
+
+                                <td><img v-bind:src=" item.TeamImageUrl || './assets/senegal.png' " width="25px" v-bind:alt=" item.TeamName "> {{ item.TeamName }} </td>
+                                <td class="text-center"> {{ item?.PTS }} </td>
+                                <td class="text-center"> {{ item?.MP }} </td>
+                                <td class="text-center"> {{ item?.W }} </td>
+                                <td class="text-center"> {{ item?.D }} </td>
+                                <td class="text-center"> {{ item?.L }} </td>
+                                <td class="text-center"> {{ item?.GF }} </td>
+                                <td class="text-center"> {{ item?.GA }} </td>
+                                <td class="text-center"> {{ item?.PlusMinus }} </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+           </div>
+
+            <div class="spacer white-bg" v-else>
+                <div class="container blue-bg text-center nodata" >
+                {{ languages?.theGameWillshowHere }}
+                </div> 
+            </div>
+           
+           <!-- match schedules section -->
+           <div class="spacer gray-bg" v-if="playNow__scheduleData.length > 0">
+
+
+                <div class="container" v-if="successPrediction!==true">
+
+                    <h1 class="uppercase small-txt text-center black-txt font-strong mt-2">
+                        {{ languages?.matcheswilllock10minutesbeforekickoff }} {{ playNow__selected_group }}
+                    </h1>
+
+
+                    <div class="matches-container fade-in one">
+                        
+                        <div 
+                            v-for="(items, index) of playNow__scheduleData"
+                            class="match-item fade-in one-half"
+                        >
+
+                        <div class="fs_wrap" v-if="showResOverlay === true">
+                            <p class="title">Final Score</p>
+                            <p class="sc">3 - 2</p>
+                            <p class="res" v-if="!incorrectScore">CORRECT!</p>
+                            <p class="res" v-else>INCORRECT!</p>
+                        </div>
+
+                            <div class="match-item__header">
+                                <span class="uppercase">{{ languages?.match }} {{ items.MatchId }} </span>
+                                <span>{{ convertTZ(items.MatchTime) }} </span>
+                                <span>{{ languages?.group }} {{ items.GroupName }}</span>
+                            </div>
+
+                            <div class="match-item__selection"
+                            :class="{ disabled: items.TeamAPrediction !== '?' && items.TeamBPrediction !== '?' }">
+
+
+
+                                <i class="fa fa-lock lock-icon"></i>
+
+
+                                <div class="country">
+                                    <img v-bind:src=" items.TeamAImageUrl || './assets/senegal.png' " width="70%" alt="" srcset="">
+                                    <span class="font-strong uppercase text-center">{{ items.TeamAName }}</span>
+                                </div>
+
+
+                              
+                                <div class="score">
+
+                                    <a href="javascript:void(0);" 
+                                        v-on:click="addScore( index, 'A' )"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+                                        
+                                        <input type="tel" 
+                                        :name="'input_name_'  + items.MatchId "
+                                        v-model="playNow__prediction_form.PredictorData[index].TeamAResult"
+                                        :disabled="items.TeamAPrediction !== '?' "
+                                        placeholder="?"
+                                        @input="$v.playNow__prediction_form.PredictorData.$each[index].TeamAResult.$touch"
+                                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                        >
+
+                                    <a href="javascript:void(0);" 
+                                        v-on:click="subtractScore( index, 'A' )"> 
+                                        <i class="fa fa-chevron-down"></i> 
+                                    </a>
+
+                                </div>
+
+                                <div style="margin: auto; width: 5% !important;">VS</div>
+
+
+                               
+                                <div class="score">
+
+                                    <a href="javascript:void(0);" v-on:click="addScore( index, 'B' )"
+                                    > 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+
+                                        <input type="tel" 
+                                        :name="'input_name_'  + items.MatchId "
+                                        v-model="playNow__prediction_form.PredictorData[index].TeamBResult"
+                                        :disabled="items.TeamBPrediction !== '?' " 
+                                        placeholder="?"
+                                        @input="$v.playNow__prediction_form.PredictorData.$each[index].TeamBResult.$touch"
+                                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                        >
+
+                                    <a href="javascript:void(0);" v-on:click="subtractScore( index, 'B' ) "
+                                    >
+                                         <i class="fa fa-chevron-down"></i> 
+                                    </a>
+
+                                </div>
+
+
+                                <div class="country">
+                                    <img v-bind:src=" items.TeamBImageUrl || './assets/netherlands.png' " width="70%" alt="" srcset="">
+                                    <span class="font-strong uppercase text-center">{{ items.TeamBName }}</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+        
+                    </div>
+
+                  
+
+                
+                <div class="submit-wrap">
+
+                    <button  
+                        v-if="(editBtnShow === true && submitBtnShow === false) && invalidForm === false"
+                        id="editBtn"
+                        class="btn cta-button uppercase small-txt fade-in one-half"
+                        style="border: 0px solid var(--accent-blue-light); background: var(--accent-black); color: #fff !important;"
+                        v-on:click="enableInputs();">{{ languages?.change }} 
+                    </button>
+
+
+                    <!-- <button  
+                        v-else
+                        class="btn cta-button uppercase small-txt"
+                        style="border: 0px solid var(--accent-blue-light)"
+                        :class="{ disabled: $v.$invalid === true }"
+                        v-on:click="submitPrediction();">{{ languages?.submit }} 
+                    </button> -->
+
+
+                    <!-- <button  
+                        v-else
+                        class="btn cta-button uppercase small-txt"
+                        style="border: 0px solid var(--accent-gray); background: var(--accent-gray)"
+                        :class="{ disabled: $v.$invalid === true }"
+                        v-on:click="
+                            selectGroup( playNow__selected_group );
+                            editBtnShow=true;">{{ languages?.cancel }} 
+                    </button> -->
+
+                    <div v-else>
+                         <button  
+                            v-if="cancelButtonShow===true"
+                            class="btn cta-button uppercase small-txt fade-in one-half"
+                            style="border: 0px solid var(--accent-gray); background: var(--accent-gray)"
+                            v-on:click="
+                                selectGroup( playNow__selected_group );
+                                editBtnShow=true;">{{ languages?.cancel }} 
+                        </button>
+                        <button  
+                            class="btn cta-button uppercase small-txt fade-in one-half"
+                            style="border: 0px solid var(--accent-blue-light)"
+                            :class="{ disabled: $v.$invalid === true }"
+                            v-on:click="submitPrediction();">{{ languages?.submit }} 
+                        </button>
+                    </div>
+                    
+
+
+
+                    
+                </div>
+                </div>
+                
+                <div class="container placeABet" v-else>
+                    <h1 class="uppercase xl-txt text-center mb-2">{{ languages?.YoureIntheGame }}</h1>
+                    <p class="text-center mb-2">
+                        {{ languages?.NowYouMade }}
+                    </p>
+                    <a class="btn cta-button text-center uppercase" href="javascript:void(0)"
+                    v-on:click="placeABet"
+                    >{{ languages?.placeABet }}</a>
+                </div>
+
+
+           </div>
+
+           <div class="spacer white-bg" style="margin-bottom: 5vh;" v-else>
+                <div class="container blue-bg text-center nodata" >
+                    {{ languages?.theGameWillshowHere }}
+                </div> 
+
+           </div>
+
+            
+
+        </section>
+
+
+
+
+
+        <!--League Table PAGE -->
+        <section id="leagueTable" class="fade-in one-half" v-if="showLeaderboards">
+
+
+
+
+            <div class="spacer white-bg" style="margin-bottom: 15vh;" v-if="false">
+
+
+                <div class="container">
+                    <!-- <h1 class="uppercase small-txt text-center black-txt font-strong">
+                        {{ languages?.myLeaguePosition }}: {{ league__userScores?.POS || 0 }}
+                    </h1> -->
+    
+                    <h1 class="uppercase small-txt text-center black-txt font-strong mb-2">
+                        {{ languages?.myPoints }}: {{ league__userScores?.TotalPoints || 0 }}
+                    </h1>
+    
+    
+                    <div class="charts-wrap">
+                        
+                        <div class="chart-container" style="width: calc( 100% / 7); height: 150px;">
+                            <canvas id="graph"></canvas>
+                            <h6 class="text-center uppercase black-txt mt-1 font-strong">{{ languages?.predictionsMade }}</h6>
+                        </div>
+        
+                        <div class="chart-container" style="width: calc( 100% / 7); height: 150px;">
+                            <canvas id="graph2"></canvas>
+                            <h6 class="text-center uppercase black-txt mt-1 font-strong">{{ languages?.correctResults }}</h6>
+                        </div>
+        
+                        <div class="chart-container" style="width: calc( 100% / 7); height: 150px;">
+                            <canvas id="graph3"></canvas>
+                            <h6 class="text-center uppercase black-txt mt-1 font-strong">{{ languages?.correctScores }}</h6>
+                        </div>
+        
+                        <div class="chart-container" style="width: calc( 100% / 7); height: 150px;">
+                            <canvas id="graph4"></canvas>
+                            <h6 class="text-center uppercase black-txt mt-1 font-strong">{{ languages?.pointsFromCR }}</h6>
+                        </div>
+        
+                        <div class="chart-container" style="width: calc( 100% / 7); height: 150px;">
+                            <canvas id="graph5"></canvas>
+                            <h6 class="text-center uppercase black-txt mt-1 font-strong">{{ languages?.pointsFromCS }}</h6>
+                        </div>
+    
+    
+                    </div>
+                    
+                </div>
+
+                <!-- <div class="container blue-bg text-center nodata" v-else>
+                    {{ languages?.theResultsWillshowHere }}
+                </div> -->
+
+
+            </div>
+
+
+
+
+            <div class="spacer gray-bg" style="margin-bottom: 0vh;">
+
+
+                <div class="container" style="margin-top: 0px !important;">
+
+                    <h1 class="uppercase small-txt text-center black-txt font-strong" style="margin-bottom: 3vh;">
+                        {{ languages?.worldCupLeaderBoards }}
+                    </h1>
+    
+
+
+                    <!-- temporarily show until results are ready-->
+
+                    <!-- <table id="lt" class="league-table" cellspacing="0px" cellpadding="20px"
+                    v-if="true"> -->
+
+                    <!-- v-if="topScores === true" -->
+    
+                        <!-- <thead>
+                            <th class="uppercase text-center font-strong">{{ languages?.position }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.name }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.correctResults }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.correctScores }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.pointsEarned }} <br><span>{{ languages?.fromCR }}</span></th>
+                            <th class="uppercase text-center font-strong">{{ languages?.pointsEarned }} <br><span>{{ languages?.fromCS }}</span></th>
+                            <th class="uppercase text-center font-strong">{{ languages?.totalPoints }}</th>
+                        </thead>
+
+
+                    </table> -->
+
+                    <!-- <div class="container blue-bg text-center nodata" style="margin-bottom: 4vh;">
+                        {{ languages?.theLeaderboardsWillShow || 'The LeaderBoards will show here when they become available' }}
+                    </div> -->
+
+
+
+                    <!--end delete after-->
+
+
+
+
+
+
+
+
+                    <table id="lt" class="league-table" cellspacing="0px" cellpadding="20px"
+                    >
+
+                    <!-- v-if="topScores === true" -->
+    
+                        <thead>
+                            <th class="uppercase text-center font-strong">{{ languages?.position }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.name }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.correctResults }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.correctScores }}</th>
+                            <th class="uppercase text-center font-strong">{{ languages?.pointsEarned }} <br><span>{{ languages?.fromCR }}</span></th>
+                            <th class="uppercase text-center font-strong">{{ languages?.pointsEarned }} <br><span>{{ languages?.fromCS }}</span></th>
+                            <th class="uppercase text-center font-strong">{{ languages?.totalPoints }}</th>
+                        </thead>
+
+
+                        
+                        <tbody>
+
+                            <tr v-for="(items , index) of league__list_top">
+
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.POS  }} </td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.Name  }}</td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.CorrectResult  }} </td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.CorrectScore  }}</td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.PointsFromCorrectResult  }}</td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.PointsFromCorrectScore  }}</td>
+                                <td :class="{ myPos: items?.POS === myPosition }">{{ items?.TotalPoints  }}</td>
+                                
+                            </tr>  
+                            
+                            <tr class="myPos" v-if="league__userScores?.POS>10">
+                                <td>{{ league__userScores?.POS  }} </td>
+                                <td>{{ league__userScores?.Name  }}</td>
+                                <td>{{ league__userScores?.CorrectResult  }} </td>
+                                <td>{{ league__userScores?.CorrectScore  }}</td>
+                                <td>{{ league__userScores?.PointsFromCorrectResult  }}</td>
+                                <td>{{ league__userScores?.PointsFromCorrectScore  }}</td>
+                                <td>{{ league__userScores?.TotalPoints  }}</td>
+                            </tr>
+                            
+                            
+
+                        </tbody>
+
+                    </table>
+
+
+
+                    <div class="submit-wrap">
+                        <button  class="btn cta-button uppercase small-txt"
+                        style="border: 0px solid var(--accent-blue-light); color: #fff !important; margin-top: 3vh;"
+                        href="javascript:void(0);" v-on:click="redirectToBonus();"
+                        >{{ languages?.showResults }}</button>
+                    </div>
+    
+                </div>
+
+                <!-- <div v-else class="container blue-bg text-center nodata">
+
+                    <h1 class="uppercase small-txt text-center black-txt font-strong" style="margin-bottom: 3vh;">
+                        {{ languages?.worldCupLeaderBoards }}
+                    </h1>
+
+                    {{ languages?.theResultsWillshowHere }}
+                </div> -->
+
+
+            </div>
+
+
+
+           
+            
+        </section>
+
+
+
+
+
+        <!--Results PAGE -->
+        <section id="results" class="fade-in one-half" v-if="showResultsPage">
+
+            <div class="spacer white-bg" v-if="false">
+
+
+                <div class="container" v-if="results_latestData.length > 0">
+                    <h1 class="uppercase small-txt text-center black-txt font-strong">   
+                        {{ languages?.latestResults }}
+                    </h1>
+
+                    <div class="matches-container lr-carousel">
+                        
+                        <div 
+                            v-for="(items, index) of results_latestData"
+                            class="match-item"
+                        >
+                            <div class="match-item__header">
+                                <span>{{ languages?.match }} {{ items.MatchId }} </span>
+                                <span>{{ convertTZ(items.MatchTime) }} </span>
+                                <span>{{ languages?.group }} {{ items.GroupName }}</span>
+                            </div>
+
+                            <div class="match-item__selection">
+
+                                <div class="country">
+                                    <img v-bind:src=" items.TeamAImageUrl || './assets/senegal.png' " width="70%" alt="" srcset="">
+                                    <span class="font-strong uppercase text-center">{{ items.TeamAName }}</span>
+                                </div>
+
+
+                              
+                                <div class="score">
+                                        
+
+                                    <a  style="visibility: hidden;"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+
+                                        <h1>{{ items.MatchAResult || '?' }}</h1>
+
+
+                                    <a style="visibility: hidden;"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+
+
+                                </div>
+
+                                <div style="margin: auto; width: 5% !important; font-size: 39px;">
+                                   
+                                    <h1 style="padding-top: 1vh;">-</h1>
+                                    <a  style="visibility: hidden;"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+                                </div>
+
+
+                               
+                                <div class="score">
+
+                                    <a  style="visibility: hidden;"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+
+                                        <h1>{{ items.MatchBResult || '?' }}</h1>
+
+                                    <a  style="visibility: hidden;"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+
+
+                                </div>
+
+
+                                <div class="country">
+                                    <img v-bind:src=" items.TeamBImageUrl || './assets/netherlands.png' " width="70%" alt="" srcset="">
+                                    <span class="font-strong uppercase text-center">{{ items.TeamBName }}</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+        
+                    </div>
+                </div>
+
+                <div class="container blue-bg text-center nodata" v-else>
+                    {{ languages?.theResultsWillshowHere }}
+                </div>
+
+
+
+            </div>
+
+            <div class="container blue-bg text-center nodata" v-else>
+                {{ languages?.theResultsWillshowHere }}
+            </div>
+
+
+
+            <!-- <div class="spacer gray-bg">
+
+
+                <div class="container">
+
+                    <h1 class="uppercase small-txt text-center black-txt font-strong" style="margin-bottom: 3vh;">   
+                        {{ languages?.resultsByGrp }}
+                    </h1>
+
+                    <ul class="group-nav__wrap res">
+
+                        
+                        <li 
+                            v-for="(item, index) in playNow__group_teamsData"
+                            class="group-nav__btn small-txt">
+                            
+                                <a  href="#scores-tbl" v-on:click="selectResultByGroup( index );">{{ index }}</a>
+                                
+                        </li>
+
+
+                    </ul>
+
+
+
+                    <div class="matches-container fade-in one" v-if="results_allDataUi.length>0">
+                        
+
+                        <div 
+                            v-for="(items, index) of results_allDataUi"
+                            class="match-item"
+                        >   
+                            
+                            <div class="match-item__header" v-if="items.TeamAResult!==null && items.TeamBResult!==null">
+                                <span>{{ languages?.match }} {{ items.MatchId }} </span>
+                                <span>{{ convertTZ(items.MatchTime) }} </span>
+                                <span>{{ languages?.group }} {{ items.GroupName }}</span>
+                            </div>
+
+                            <div class="match-item__selection" v-if="items.TeamAResult!==null && items.TeamBResult!==null">
+
+                                <div class="country">
+                                    <img v-bind:src=" items.TeamAImageUrl || './assets/senegal.png' " width="70%" alt="" srcset="">
+                                    <span class="font-strong uppercase text-center">{{ items.TeamAName }}</span>
+                                </div>
+
+
+                              
+                                <div class="score">
+                                        
+
+                                    <a  style="visibility: hidden;"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+
+                                        <h1>{{ items.TeamAResult || '?' }}</h1>
+
+
+                                    <a style="visibility: hidden;"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+
+
+                                </div>
+
+                                <div style="margin: auto; width: 5% !important; font-size: 39px;">
+                                   
+                                    <h1 style="padding-top: 1vh;">-</h1>
+                                    <a  style="visibility: hidden;"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+                                </div>
+
+
+                               
+                                <div class="score">
+
+                                    <a  style="visibility: hidden;"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+
+                                        <h1>{{ items.TeamBResult || '?' }}</h1>
+
+                                    <a  style="visibility: hidden;"> 
+                                        <i class="fa fa-chevron-up"></i> 
+                                    </a>
+
+
+                                </div>
+
+
+                                <div class="country">
+                                    <img v-bind:src=" items.TeamBImageUrl || './assets/netherlands.png' " width="70%" alt="" srcset="">
+                                    <span class="font-strong uppercase text-center">{{ items.TeamBName }}</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+        
+                    </div>
+
+                    <div class="container blue-bg text-center nodata" v-else>
+                        {{ languages?.theResultsWillshowHere }}
+                    </div>
+
+
+                </div>
+
+                
+
+            </div>
+             -->
+            
+        </section>
+
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+
+            <div class="modal-content" >
+
+                <!-- Success Prediction-->
+                <div class="message-wrap" v-if="successPrediction">
+                    <h1 class="txt-bold blue-txt letter-spacing-2x text-center uppercase mb-1">{{ languages?.successfulPred}}</h1>
+
+                    <h2 class="title black-txt letter-spacing-1x uppercase text-center mb-1">{{ languages?.thankYou}}</h2>
+                </div>
+
+                <!-- Wrong Prediction -->
+                <div class="message-wrap" v-if="errorPrediction">
+                    <h2 class="title black-txt letter-spacing-1x uppercase text-center mb-1">{{ languages?.thankYou}}</h2>
+                    <h1 class="txt-bold blue-txt letter-spacing-2x text-center uppercase mb-1">{{ errorMessage || 'error message here'}} </h1>
+                </div>
+
+                <!--close the modal-->
+                <div v-if="isLoading === false" id="close-modal" class="modal-footer blue-bg-dark"><a class="white-txt text-center mb-1 uppercase" v-on:click="hideModals()">OK</a></div>
+
+
+            </div>            
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/libphonenumber-js/bundle/libphonenumber-js.min.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/vuelidate.min.js"></script>
+    <script src="./js/validators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+    <script src="https://naver.github.io/billboard.js/release/latest/dist/billboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="http://fixanoid.github.io/doughtnut-progress/pretty-doughtnut.js"></script>
+    <script src="./js/config.js?v=66>"></script>
+    <script src="./js/functions-guest.js?v=5>"></script>
+    
+</body>
+    <!--v10131918-->
+</html>

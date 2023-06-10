@@ -1,0 +1,182 @@
+{
+  "noResult": "Tidak ada hasil",
+  "tenIPLTeams": "10 IPL Tim",
+  "pointsTable": "Nilai Poin",
+  "predictTheWinnerMsg": "Prediksi pemenang dari games dibawah",
+  "predictionsRemain": "Prediksi Tersisa",
+  "upcomingMatches": "Pertandingan Mendatang",
+  "pastMatches": "Pertandingan Sebelumnya",
+
+  "submit": "Kirim",
+  "playNow": "Main Sekarang", 
+  "cancel": "Batal",
+  "worldCupPredictor": "Prediksi World Cup",
+  "playToWin": "Main untuk menang",
+  "jackpotMoney": "Rp15,000,000,000",
+  "days": "Hari",
+  "hours": "Jam",
+  "minutes": "Menit",
+  "seconds": "Detik",
+  "submissionsClose": "Waktu Telah Berakhir",
+  "howToPlay": "Cara Bermain",
+  "leaderboards": "Papan Pengumuman",
+  "results": "Hasil",
+  "prizes": "Hadiah",
+  "selectGroupToView": "Pilih Grup untuk melihat kolom",
+  "theGameWillshowHere": "Pertandingan akan ditampilkan di sini saat tersedia",
+  "theResultsWillshowHere": "Hasil akan ditampilkan di sini saat tersedia",
+  "matcheswilllock10minutesbeforekickoff": "Pertandingan akan dikunci 10 menit sebelum dimulai kick off - Grup",
+  "edit": "Edit",
+  "match": "Pertandingan",
+  "group": "Grup",
+  "finalScore": "Hasil Akhir",
+  "correct": "Benar",
+  "incorrect": "Salah",
+  "gamesPlayed": "Pertandingan sedang berlangsung",
+  "correctResults": "Hasil yang benar",
+  "correctScores": "Skor yang benar",
+  "pointsFromCR": "Poin dari hasil yang benar",
+  "pointsFromCS": "Point dari skor yang benar",
+  "worldCupLeaderBoards": "Papan Pengumuman World Cup",
+  "position": "Posisi",
+  "name": "Nama",
+  "showResults": "Tunjukan Hasil",
+  "latestResults": "Hasil yang terbaru",
+  "totalPoints": "Total Poin",
+  "resultsByGrp": "Hasil per grup",
+  "theScoreboard": "Papan Skor",
+  "showMore": "Tunjukan Lebih",
+  "success": "success",
+  "error": "error",
+  "bronze": "Perunggu",
+  "gold": "Emas",
+  "silver": "Perak",
+  "pointsEarned": "Poin diperoleh",
+  "fromCR": "Dari Hasil yang benar",
+  "fromCS": "Dari Skor yang benar",
+  "myLeaguePosition": "Posisi Liga Saya",
+  "myPoints": "Poin Saya",
+  "predictionsMade": "Prediksi dibuat",
+  "thankYou": "Terima Kasih",
+  "ok": "Ok",
+  "change": "Mengganti",
+  "confirm": "Mengkonfirmasi",
+  "amount": "Jumlah",
+  "showTableForMyPos": "Tampilkan papan untuk melihat posisi saya",
+  "showTop10": "Tunjukan Top 10",
+  "successfulPred": "Prediksi Sukses",
+  "YoureIntheGame": "Anda sedang dalam pertandingan",
+  "NowYouMade": "Sekarang Anda telah membuat prediksi, pasang taruhan di buku olahraga kami untuk bersaing memperebutkan hadiah.",
+  "placeABet": "Memasang Taruhan",
+  
+  "pointsAsFollowsTitle": "Poin diberikan sebagai berikut",
+  "pointsAsFollowsContent": "Papan peringkat akan diperbarui setelah setiap pertandingan",
+  "prizesContent": "Memprediksi dengan benar hasil dari semua 70 pertandingan maka Rp15,000,000,000 akan dimenangkan oleh satu pemenang yang beruntung!<br>Jika Anda tidak memenangkan jackpot, jangan khawatir, kami memiliki hadiah lain sebesar Rp76,000,000untuk diberikan kepada 50 pemain yang beruntung. Seiring berjalannya kompetisi, poin akan diberikan kepada setiap orang yang telah membuat prediksi dengan papan peringkat yang tersedia untuk lihat di mana peringkat Anda. Di akhir kontes, hadiah uang tunai akan diberikan berdasarkan posisi papan peringkat.",
+
+  "howToPlayResults": "<p>Jangan lewatkan kesempatan Anda untuk menang dalam Kontes prediksi eksklusif gratis kami. Cukup prediksi hasil akhir dari setiap pertandingan, maka anda ber-peluang memenangkan total hadiah sebesar Rp15,000,000,000</p><br><br><p>Selain memperebutkan hadiah utama, Anda juga akan mengikuti kompetisi papan peringkat kedua bersama pemain lainnta dan berjuang untuk memenangkan bagian seumlah Rp76,000,000 dan 50 hadiah besar lainnya.</p><br><br><p>Untuk memulai, sangatlah mudah. Cukup klik <a href='javascript:void(0);' id='clickP' style='color: var(--accent-pink);'> Mainkan Sekarang </a> dan mengunci pilihan kalian.</p><br><br><p>Anda bisa memprediksi total 70 pertandingan dari sekarang dan pilihan akan tetap tersedia hingga minggu ke 7 di Turnamen IPL.</p><br><br><p>Jangan khawatir jika Anda berubah pikiran pada pilihan sebelumnya, prediksi Anda dapat diubah kapan saja, sesering yang Anda suka, asalkan pertandingan belum dimulai Semua pertandingan akan dinonaktifkan untuk prediksi pertandingan apa pun 60 menit sebelum kickoff.</p>"
+  
+  ,"faq": [
+    {"Q": "ATURAN KOMPETISI",
+      "A": [
+        "Semua pemain akan dianggap telah menyetujui semua aturan yang berlaku",
+        "Untuk memenangkan Rp15,000,000,000, Anda harus memprediksi 70 hasil pertandingan yang benar, yang menjadi pemenang setiap pertandingan",
+        "Untuk memenangkan jackpot Rp15,000,000,000, semua 70 game harus di prediksi",
+        "Sehubungan dengan kompetisi papan peringkat Rp15,000,000,000 pemain dengan poin terbanyak di akhir kompetisi akan memenangkan liga. Jika dua atau lebih pemain memiliki poin yang sama, hadiah akan diberikan dan dibagi di antara mereka.",
+        "CONTOH:<br>Jika lebih dari satu pemain imbang untuk posisi yang sama di Papan Peringkat, hadiah gabungan untuk posisi yang terpengaruh akan dibagi dengan jumlah pemain imbang. Yaitu, jika tiga pemain imbang untuk posisi pertama, hadiah untuk peringkat 1, 2 dan posisi ke-3 akan digabungkan dan kemudian dibagi dengan tiga pemain yang seri",
+        "Jika ada jadwal pertandingan yang diubah oleh otoritas BCCI karena alasan apa pun, atau masalah lain apa pun yang mengakibatkan perubahan jadwal pertandingan di IPL 2023, setiap upaya akan dilakukan untuk memperbarui bagan prediktor yang sesuai, skor akhir dan poin yang diberikan, memperbolehkan dan/atau mendiskualifikasi pemain karena dugaan penipuan, keputusan administrator akan bersifat final dan tidak ada korespondensi yang akan dilakukan."
+      ]
+    },
+    {"Q": "SYARAT DAN KETENTUAN UMUM",
+      "A": 
+      [
+        "Semua pemain Happistar termasuk baru atau lama berhak untuk bergabung.",
+        "Kontes akan dibuka dari tanggal 17th Maret 2023 hingga 21 Mei 2023",
+        "Pemain harus telah memasang taruhan uang nyata kumulatif hingga setidaknya nilai Rp15,000,000,000 pada IPL 2023 agar memenuhi syarat untuk kemenangan apa pun Deposit tidak bisa di gabungkan dengan bonus.",
+        "Jumlah setoran kumulatif minimum Rp164,000.00 harus dilakukan selama durasi kontes IPL 2023 agar memenuhi syarat untuk menang",
+        "Semua hadiah harus diklaim dengan mengirim email ke <a href='mailto:IPL2023@happistar.com'>IPL2023@happistar.com</a> dalam waktu tiga hari setelah kontes berakhir",
+        "Kemenangan yang tercantum pada papan peringkat akan dibayarkan dalam waktu 48 jam setelah klaim diterima dan divalidasi",
+        "Jackpot Rp15,000,000,000 akan dicek dan setelahnya akan di jadwalkan untuk pembayaran",
+        "Happistar berhak sewaktu-waktu mengubah atau menghentikan, untuk sementara atau selamanya, Kontes ini dengan atau tanpa pemberitahuan sebelumnya karena alasan di luar kendalinya (termasuk, tanpa batasan, dalam kasus penipuan yang diantisipasi, dicurigai, atau aktual).",
+        "Pemenang hadiah Rp15,000,000,000 harus setuju untuk ikut serta dalam acara media sebagai bagian dari pengumuman, namun nama asli dan lokasi dapat dirahasiakan atas permintaan",
+        "Syarat umum situs berlaku"
+      ]
+    }
+  ],
+
+  "prizesTable": [
+    {
+      "pos": "Peringkat ke 1",
+      "amount": "Rp16,000,000"
+    },
+    {
+      "pos": "Peringkat ke 2",
+      "amount": "Rp12,000,000"
+    },
+    {
+      "pos": "Peringkat ke 3",
+      "amount": "Rp11,000,000"
+    },
+    {
+      "pos": "Peringkat ke 4",
+      "amount": "Rp9,000,000"
+    },
+    {
+      "pos": "Peringkat ke 5",
+      "amount": "Rp8,000,000"
+    },
+    {
+      "pos": "Peringkat ke 6",
+      "amount": "Rp4,500,000"
+    },
+    {
+      "pos": "Peringkat ke 7",
+      "amount": "Rp3,000,000"
+    },
+    {
+      "pos": "Peringkat ke 8",
+      "amount": "Rp2,200,000"
+    },
+    {
+      "pos": "Peringkat ke 9",
+      "amount": "Rp1,800,000"
+    },
+    {
+      "pos": "Peringkat ke 10",
+      "amount": "Rp1,000,000"
+    },
+    {
+      "pos": "Peringkat ke 11-15",
+      "amount": "Rp600,000"
+    },
+    {
+      "pos": "Peringkat ke 16-25",
+      "amount": "Rp200,000"
+    },
+    {
+      "pos": "Peringkat ke 26-35",
+      "amount": "Rp150,000"
+    },
+    {
+      "pos": "Peringkat ke 36-50",
+      "amount": "Rp80,000 "
+    }
+  ],
+
+  "theLeaderboardsWillShow": "Pengumuman akan ditampilkan di sini saat tersedia",
+  "youAreAlmostDone": "Andra Hampir Menyelesaikannya",
+  "youAreAlmostDone_content": "Prediksi sisa pertandingan grup untuk memperebutkan Hadiah Utama!",
+  "backToPredictionsPage": "Kembali ke halaman Prediksi",
+  "allMatchComplete": "Semua 70 prediksi pertandingan kini telah selesai, pasang taruhan di Sportsbook kami untuk dapat mengklaim hadiah dari papan peringkat",
+  "betNow": "Pasang Sekarang",
+  "theMatchEndedWithoutPrediction" :  "Pertandingan telah berakhir tanpa prediksi Anda",
+  "point": "poin",
+  "points": "poin",
+  "correctResult": "Hasil yang benar",
+  "correctScore": "Skor yang benar",
+  "matchHasStartedWaiting": "Pertandingan dimulai, menunggu hasil"
+
+
+
+
+
+}

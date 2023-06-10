@@ -1,0 +1,1 @@
+var apiUrl = "https://wcp-ipl-vc5omsbdg5tn.rgbhu.io";

@@ -1,0 +1,179 @@
+{
+  "noResult": "Không kết quả",
+  "tenIPLTeams": "10 đội IPL",
+  "pointsTable": "bảng điểm ",
+  "predictTheWinnerMsg": "Dự đoán Người chiến thắng trong các trò chơi bên dưới",
+  "predictionsRemain": "Dự đoán vẫn còn",
+  "upcomingMatches": "Các trận đấu sắp tới",
+  "pastMatches": "Các trận đấu đã qua",
+  
+  "submit": "Gửi",
+  "playNow": "Chơi Ngay", 
+  "cancel": "Hủy",
+  "worldCupPredictor": "Dự đoán Tỷ số World Cup",
+  "playToWin": "Chơi để Thắng",
+  "jackpotMoney": "24,000,000,000VNĐ",
+  "days": "Ngày",
+  "hours": "Giờ",
+  "minutes": "Phút",
+  "seconds": "Giây",
+  "submissionsClose": "Ngừng nhận Dự đoán",
+  "howToPlay": "Cách Chơi",
+  "leaderboards": "Bảng Xếp Hạng",
+  "results": "Kết Quả",
+  "prizes": "Giải Thưởng",
+  "selectGroupToView": "Chọn Bảng để xem chi tiết",
+  "theGameWillshowHere": "Trò chơi sẽ hiển thị ở đây",
+  "theResultsWillshowHere": "Kết quả sẽ thể hiện ở đây",
+  "matcheswilllock10minutesbeforekickoff": "Các trận đáu sẽ KHÓA 10 phút trước kho bắt đầu - Bảng",
+  "edit": "Chỉnh sửa",
+  "match": "Trận",
+  "group": "Bảng",
+  "finalScore": "Kết quả Cuối cùng",
+  "correct": "Chính xác",
+  "incorrect": "Sai",
+  "gamesPlayed": "Các trận đã dự đoán",
+  "correctResults": "Kết quả Đúng",
+  "correctScores": "Bàn thắng Đúng",
+  "pointsFromCR": "Điểm từ Kết quả Đúng",
+  "pointsFromCS": "Điểm từ Bán thắng Đúng",
+  "worldCupLeaderBoards": "Bảng Xếp Hạng World Cup",
+  "position": "Thứ hạng",
+  "name": "Tên",
+  "showResults": "Hiển thị Kết quả",
+  "latestResults": "Kết quả Mới nhất",
+  "totalPoints": "Tổng Điểm",
+  "resultsByGrp": "Kết quả theo Bảng",
+  "theScoreboard": "Bảng Điểm",
+  "showMore": "Hiển thị thêm",
+  "success": "Thành công",
+  "error": "Lỗi",
+  "bronze": "Đồng",
+  "gold": "Vàng",
+  "silver": "Bạc",
+  "pointsEarned": "Điểm ghi được",
+  "fromCR": "từ kết quả đúng",
+  "fromCS": "từ bàn thắng đúng",
+  "myLeaguePosition": "Thứ hạng của tôi",
+  "myPoints": "Điểm của tôi",
+  "predictionsMade": "Dự đoán đã đưa ra",
+  "thankYou": "Xin cảm ơn",
+  "ok": "ok",
+  "change": "Thay đổi",
+  "confirm": "Xác nhận",
+  "amount": "Số tiền",
+  "showTableForMyPos": "Hiển thị thứ hạng của tôi",
+  "showTop10": "Hiển thị Top 10",
+  "successfulPred": "Dự đoán thành công",
+  "YoureIntheGame": "Bạn đã nhập cuộc",
+  "NowYouMade": "Hiện bạn đã hoàn tất dự đoán, hãy đặt cược để được tham gia vào bảng xếp hạng.",
+  "placeABet": "Đặt Cược",
+  
+  
+  "pointsAsFollowsTitle": "ĐIỂM SỐ ĐƯỢC CHO NHƯ SAU",
+  "pointsAsFollowsContent": "Bảng xếp hạng sẽ được cập nhật sau mỗi trận đấu.",
+  "prizesContent": "Dự đoán chính xác kết quả của tất cả 70 trận đấu và một người chiến thắng may mắn sẽ giành được số tiền khổng lồ 24,000,000,000VNĐ <br> Nếu bạn không trúng giải độc đắc, đừng lo lắng, chúng tôi có một loại tiền khác 120,000,000VNĐ để tặng cho 50 người chơi may mắn. Khi cuộc thi tiến triển, điểm sẽ được trao cho tất cả những người đã đưa ra dự đoán với bảng xếp hạng có sẵn để xem vị trí của bạn. Vào cuối cuộc thi, giải thưởng tiền mặt sẽ được trao dựa trên vị trí bảng xếp hạng.",
+
+  "howToPlayResults": "<p>Đừng bỏ lỡ cơ hội giành chiến thắng trong Cuộc thi dự đoán độc quyền, miễn phí của chúng tôi. Chỉ cần dự đoán kết quả cuối cùng của mỗi trận, bạn sẽ có cơ hội giành được một số tiền lớn 24,000,000,000VNĐ.</p><br><br><p>Cùng với việc tranh giải thưởng chính, bạn cũng sẽ tham gia vào cuộc thi thứ hai trên bảng xếp hạng với tất cả người chơi chiến đấu để giành phần của họ 120,000,000VNĐ với 50 giải thưởng để giành lấy.</p><br><br><p>Chỉ cần nhấp vào <a href='javascript:void(0);' id='clickP' style='color: var(--accent-pink);'> Chơi Ngay </a>  để nhập Người chiến thắng trận đấu của bạn bằng cách nhấp vào đội và khóa lựa chọn của bạn.</p><br><br><p>Bạn có thể nhập kết quả cho tất cả 70 trận đấu sớm bao nhiêu tùy thích và các lựa chọn sẽ vẫn có sẵn để tham gia vào tuần thứ 7 của Giải đấu IPL.</p><br><br><p>Đừng lo lắng nếu bạn đổi ý về bất kỳ lựa chọn nào, dự đoán của bạn có thể được thay đổi bất cứ lúc nào, bao nhiêu lần tùy thích, miễn là trận đấu chưa bắt đầu. Tất cả các trận đấu sẽ bị vô hiệu hóa đối với bất kỳ dự đoán trận đấu nào 60 phút trước khi bắt đầu.</p>",
+  
+  "faq": [
+    {"Q": "THỂ LỆ THI ĐẤU",
+      "A": [
+        "Tất cả người chơi sẽ được coi là đã chấp nhận các quy tắc của trò chơi.",
+        "Để giành được 24,000,000,000VNĐ, bạn phải dự đoán đúng 70 kết quả trận đấu, đó là người chiến thắng trong mỗi trận đấu",
+        "Để giành được giải độc đắc 24,000,000,000VNĐ, phải chơi tất cả 70 trò chơi.",
+        "Liên quan đến cuộc thi bảng xếp hạng 24,000,000,000VNĐ, người chơi có nhiều điểm nhất khi kết thúc cuộc thi sẽ giành chiến thắng trong giải đấu. Nếu hai hoặc nhiều người chơi bằng điểm nhau, giải thưởng sẽ được trao và chia đều cho họ.",
+        "Ví dụ:<br>Nếu có nhiều hơn một người chơi đồng hạng cho cùng một vị trí trên Bảng xếp hạng, tổng giải thưởng cho các vị trí bị ảnh hưởng sẽ được chia cho số người chơi đồng hạng. Tức là, nếu ba người chơi đồng hạng nhất thì giải thưởng dành cho hạng nhất, hạng nhì và vị trí thứ 3 sẽ được kết hợp và sau đó chia cho ba người chơi bằng nhau",
+        "Trong trường hợp bất kỳ lịch thi đấu nào bị chính quyền BCCI thay đổi vì bất kỳ lý do gì hoặc bất kỳ vấn đề nào khác dẫn đến thay đổi lịch thi đấu trong IPL 2023, mọi nỗ lực sẽ được thực hiện để cập nhật biểu đồ dự đoán cho phù hợp. Tuy nhiên, trong trường hợp không chắc xảy ra bất kỳ vấn đề nào liên quan đến kết quả trò chơi, điểm số cuối cùng và số điểm được trao, cho phép và/hoặc loại người chơi do nghi ngờ gian lận, quyết định của quản trị viên sẽ là quyết định cuối cùng và sẽ không có thư từ nào được đưa vào."
+      ]
+    },
+    {"Q": "ĐIỀU KHOẢN & ĐIỀU KIỆN CHUNG",
+      "A": 
+      [
+        "Tất cả người chơi Happistar mới và hiện tại đều đủ điều kiện tham gia.",
+        "Cuộc thi sẽ được mở từ ngày 17 tháng 3 năm 2023 đến ngày 21 tháng 5 năm 2023",
+        "Người chơi phải đặt cược tích lũy bằng tiền thật ít nhất bằng giá trị 25,2000 VNĐ trên IPL 2023 để đủ điều kiện nhận bất kỳ khoản tiền thắng cược nào. Tiền gửi không thể có tiền thưởng.",
+        "Số tiền gửi tích lũy tối thiểu là 252,000VNĐ phải được thực hiện trong suốt thời gian diễn ra cuộc thi IPL 2023 để đủ điều kiện nhận tiền thưởng",
+        "Tất cả các giải thưởng phải được yêu cầu bằng cách gửi email đến <a href='mailto:IPL2023@happistar.com'>IPL2023@happistar.com</a> trong vòng ba ngày kể từ ngày kết thúc cuộc thi",
+        "Tiền thắng cược trên bảng xếp hạng sẽ được thanh toán trong vòng 48 giờ sau khi nhận được yêu cầu và xác thực",
+        "Giải độc đắc 24,000,000,000VNĐ sẽ được kiểm tra tài khoản và lịch thanh toán sẽ được thỏa thuận tại thời điểm phát hành",
+        "Happistar có quyền bất cứ lúc nào để sửa đổi hoặc ngừng tạm thời hoặc vĩnh viễn Cuộc thi này mà không cần thông báo trước vì những lý do nằm ngoài tầm kiểm soát của Happistar (bao gồm nhưng không giới hạn ở trường hợp gian lận có thể đoán trước, nghi ngờ hoặc thực tế).",
+        "Người chiến thắng giải thưởng 24,000,000,000VNĐ phải đồng ý tham gia các sự kiện truyền thông như một phần của thông báo, tuy nhiên tên thật và địa điểm có thể được giữ lại theo yêu cầu",
+        "Áp dụng quy tắc trang web chung"
+      ]
+    }
+  ],
+
+  "prizesTable": [
+    {
+      "pos": "Vị trí số 1",
+      "amount": "24,000,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 2",
+      "amount": "19,000,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 3",
+      "amount": "17,000,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 4",
+      "amount": "15,000,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 5",
+      "amount": "12,000,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 6",
+      "amount": "7,000,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 7",
+      "amount": "4,500,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 8",
+      "amount": "3,500,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 9",
+      "amount": "3,000,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 10",
+      "amount": "2,200,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 11 đến Vị trí thứ 15",
+      "amount": "1,000,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 16 đến Vị trí thứ 25",
+      "amount": "350,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 26 đến Vị trí thứ 35",
+      "amount": "250,000VNĐ"
+    },
+    {
+      "pos": "Vị trí thứ 36 đến Vị trí thứ 50",
+      "amount": "120,000VNĐ"
+    }
+  ],
+
+  "theLeaderboardsWillShow": "Bảng Xếp Hạng sẽ được hiển thị tại đây",
+  "youAreAlmostDone": "BẠN ĐÃ GẦN HOÀN TẤT",
+  "youAreAlmostDone_content": "Dự đoán phần còn lại của các trận vòng bảng để tranh giải cao nhất!",
+  "backToPredictionsPage": "Trở lại trang dự đoán",
+  "allMatchComplete": "Tất cả 70 dự đoán trận đấu hiện đã hoàn tất, hãy đặt cược thể thao cùng HappiStar để có thể nhận giải thưởng từ bảng xếp hạng",
+  "betNow": "Đặt Cược Ngay",
+  "theMatchEndedWithoutPrediction" :  "Trận đấu đã kết thúc ngoài dự đoán của bạn",
+  "point": "điểm",
+  "points": "điểm",
+  "correctResult": "Kết quả Đúng",
+  "correctScore": "Bàn thắng Đúng",
+  "matchHasStartedWaiting": "Trận đấu bắt đầu, chờ kết quả"
+
+}
